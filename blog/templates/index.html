@@ -10,6 +10,10 @@
     {% for post in posts %}
         <h1>{{ post.title|upper }}</h1>
         <a href="{{post.get_absolute_url}}">Read more</a> <br>
+
+        {% url 'sharePost' post.id as the_url %}
+        <a href="{{ the_url }}"><button>Share with gmail</button></a>
+
     {% endfor %}
 
     <br><br>

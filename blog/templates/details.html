@@ -4,3 +4,23 @@
     <li>{{post.status}}</li>
     <li>{{post.body}}</li>
 </ul>
+<hr>
+
+{% for comment in comments %}
+    <div>
+        <p >
+            Comment {{ forloop.counter }} by - <b> {{ comment.name }} </b>
+            {{ comment.created }}
+        </p>
+        {{ comment.body|linebreaks }}
+    </div>
+{% empty %}
+    <p>There are no comments yet.</p>
+{% endfor %}
+
+<h3>Add a comment</h3>
+<form  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
