@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'blog'
 ]
 
@@ -125,3 +127,5 @@ EMAIL_HOST_USER = 'servercall200@gmail.com'
 EMAIL_HOST_PASSWORD = 'hellobrother100'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+SITE_ID=4
